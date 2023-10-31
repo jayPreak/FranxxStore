@@ -644,6 +644,7 @@ margin-top: 160px;
     height: 62%;
     top: -2%;
     right: -6%;
+    z-index: -1;
   }
   .footer-banner-container{
     height: 560px;

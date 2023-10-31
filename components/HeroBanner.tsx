@@ -5,15 +5,19 @@ import Link from 'next/link'
 const HeroBanner = () => {
     return (
         <div className='hero-banner-container'>
+
+
             <div>
                 <p className='beats-solo'>small Text</p>
                 <h3>mid text</h3>
-                <Image src='' alt='franxx' className='hero-banner-image' />
+
+
 
                 <div>
                     <Link
                         href='/product/ID'
                         passHref
+                    // className='flex'
                     >
                         <button type='button'>button</button>
                     </Link>
@@ -22,8 +26,11 @@ const HeroBanner = () => {
                         <h5>Description</h5>
                         <p>description</p>
                     </div>
+
                 </div>
+
             </div>
+
         </div>
     )
 }

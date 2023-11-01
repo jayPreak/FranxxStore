@@ -3,7 +3,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 
 const HeroBanner = () => {
-    // console.log()
+    // console.log(dede)
     return (
         <div className='hero-banner-container'>
 

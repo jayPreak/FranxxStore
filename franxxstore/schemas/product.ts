@@ -1,3 +1,5 @@
+import { defineArrayMember, defineType } from "sanity"
+
 export default {
     name: 'product',
     title: 'Product',
@@ -36,5 +38,11 @@ export default {
             title: 'Details',
             type: 'string'
         }
-    ]
+    ],
+    preview: {
+        select: {
+          title: 'name',
+          media: 'image',
+        },
+      },
 }

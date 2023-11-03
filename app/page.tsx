@@ -1,4 +1,6 @@
+import { Products } from '@/franxxstore/types'
 import { Product, HeroBanner, FooterBanner } from '../components'
+import { client } from '../lib/client'
 
 export default function Home() {
   return (
@@ -10,13 +12,10 @@ export default function Home() {
         <p>FRANXXフランクス</p>
       </div>
 
-      <div className="products-container">
-        {['Prod 1', 'Prod 2', 'Prod 3'].map(
-          (prod, key) => <p key={key}>{prod}</p>
-        )}
-      </div>
-
+      <Product />
       <FooterBanner />
     </>
   )
 }
+
+

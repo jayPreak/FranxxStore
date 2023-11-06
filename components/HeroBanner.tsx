@@ -1,9 +1,12 @@
 import React from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
+import { client } from '@/lib/client'
+import { Banners } from '@/franxxstore/types';
 
-const HeroBanner = () => {
-    // console.log(dede)
+async function HeroBanner() {
+    const posts = await client.fetch<Banners[]>(`*[_type == "banner"]`);
+    // console.log(posts)
     return (
         <div className='hero-banner-container'>
 
@@ -35,5 +38,6 @@ const HeroBanner = () => {
         </div>
     )
 }
+
 
 export default HeroBanner

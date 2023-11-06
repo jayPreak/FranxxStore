@@ -25,4 +25,13 @@ export type Banners = {
   slug: {
     current: string
   }
+  buttonText: string,
+  product: string,
+  smallText: string,
+  largeText1: string,
+  largeText2: string,
+  saleTime: string,
+  discount: string,
+  midText: string,
+  desc: string,
 };

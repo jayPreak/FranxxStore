@@ -14,3 +14,5 @@ export type Products = {
         
   }
 };
+
+export type Banners = {}

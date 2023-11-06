@@ -15,4 +15,14 @@ export type Products = {
   }
 };
 
-export type Banners = {}
+export type Banners = {
+  _id: string,
+  name: string,
+  image: {
+    alt: string,
+    image: string
+  },
+  slug: {
+    current: string
+  }
+};

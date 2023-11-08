@@ -5,7 +5,7 @@ import { GetStaticProps } from 'next';
 
 async function Product() {
     const products = await client.fetch<Products[]>(`*[_type == "product"]`);
-    console.log(products)
+    // console.log(products)
     return (
         <ul>
             {products.map((product) => (

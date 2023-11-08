@@ -1,43 +1,41 @@
+/* eslint-disable @next/next/no-img-element */
 import React from 'react'
-import Image from 'next/image'
+import Img from 'next/image'
 import Link from 'next/link'
-import { client } from '@/lib/client'
-import { Banners } from '@/franxxstore/types';
+import { Banners } from '../franxxstore/types/index';
+import { client, urlFor } from '@/lib/client';
+import { useNextSanityImage } from 'next-sanity-image';
 
-async function HeroBanner() {
-    const posts = await client.fetch<Banners[]>(`*[_type == "banner"]`);
-    // console.log(posts)
+const HeroBanner = ({ bannerData }: { bannerData: Banners }) => {
+    console.log(urlFor(bannerData.image).url())
+    // const imgsrc = useNextSanityImage(client, bannerData.image)
+    const divStyle = {
+        backgroundImage: `url(${urlFor(bannerData.image).width(700).url()})`,
+        backgroundSize: 'cover',
+        backgroundRepeat: 'no-repeat',
+        // borderRadius: '10px',
+    };
     return (
-        <div className='hero-banner-container'>
-
-
-            <div>
-                <p className='beats-solo'>small Text</p>
-                <h3>mid text</h3>
-
-
+        <div className='hero-banner-container relative' style={divStyle}>
+            <div className="absolute inset-0 bg-black opacity-70 rounded-[15px]"></div>
+            <div className="relative z-10">
+                <p className='beats-solo text-white'>{bannerData.smallText}</p>
+                <h3 className="text-white">{bannerData.midText}</h3>
+                <h1>{bannerData.largeText1}</h1>
 
                 <div>
-                    <Link
-                        href='/product/ID'
-                        passHref
-                    // className='flex'
-                    >
-                        <button type='button'>button</button>
+                    <Link href={`/product/${bannerData.product}`} passHref>
+                        <button type='button' style={{ fontFamily: "MyFont" }} className='minecraft-btn mx-auto pb-2 w-40 text-center text-white truncate p-1 border-2 border-b-4 hover:text-yellow-200'>{bannerData.buttonText}</button>
                     </Link>
 
-                    <div className="desc">
+                    <div className="desc text-white">
                         <h5>Description</h5>
-                        <p>description</p>
+                        <p>{bannerData.desc}</p>
                     </div>
-
                 </div>
-
             </div>
-
         </div>
     )
 }
-
 
 export default HeroBanner

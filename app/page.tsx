@@ -3,7 +3,7 @@ import { Product, HeroBanner, FooterBanner } from '../components'
 import { client } from '../lib/client'
 
 async function getData() {
-  const banners = await client.fetch<Banners[]>(`*[_type == "banner"]`);
+  const banners = await client.fetch(`*[_type == "banner"]`);
   const products = await client.fetch<Products[]>(`*[_type == "product"]`);
 
   return {
@@ -14,9 +14,10 @@ async function getData() {
 export default async function Home() {
   const { props } = await getData()
   const { products, banners } = props
+  console.log(banners[0])
   return (
     <>
-      <HeroBanner />
+      <HeroBanner bannerData={banners.length && banners[0]} />
 
       <div className="products-heading">
         <h2>Best Selling</h2>

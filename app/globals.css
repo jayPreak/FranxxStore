@@ -8,6 +8,12 @@
   font-weight: normal;
   font-style: normal;
 }
+
+::selection {
+  background: rgba(0,0,0,0.3);
+  text-shadow: 2px 0 1px #ff3f1a,-2px 0 1px #00a7e0;
+  color: white
+}
 :root {
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;

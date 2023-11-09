@@ -1,20 +1,26 @@
 import React from 'react';
-import { client } from '@/lib/client';
+import { urlFor } from '@/lib/client';
 import { Products } from '@/franxxstore/types';
-import { GetStaticProps } from 'next';
+import Link from 'next/link';
 
-async function Product() {
-    const products = await client.fetch<Products[]>(`*[_type == "product"]`);
-    // console.log(products)
+async function Product({ product }: { product: Products }) {
+    console.log(product.name)
+    const u = urlFor(product.image[0]).url()
+    // console.log('hii', urlFor(product.image[0]).url())
     return (
-        <ul>
-            {products.map((product) => (
-                <li key={product._id}>
-                    <a href={product?.slug.current}>{product?.name}</a>
-                    <p>{product.price}</p>
-                </li>
-            ))}
-        </ul>
+        <div className=''>
+            <Link href={`product/${product.slug.current}`}>
+                <div className="product-card ">
+                    <img
+                        src={u}
+                        alt={product.name}
+                        className='product-image p-4 w-full h-[350px]'
+                    />
+                    <p className="product-name">{product.name}</p>
+                    <p className="product-price">Rs. {product.price}</p>
+                </div>
+            </Link>
+        </div>
     );
 }
 

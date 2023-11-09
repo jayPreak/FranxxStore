@@ -7,8 +7,7 @@ import { client, urlFor } from '@/lib/client';
 import { useNextSanityImage } from 'next-sanity-image';
 
 const HeroBanner = ({ bannerData }: { bannerData: Banners }) => {
-    console.log(urlFor(bannerData.image).url())
-    // const imgsrc = useNextSanityImage(client, bannerData.image)
+    // console.log(urlFor(bannerData.image))
     const divStyle = {
         backgroundImage: `url(${urlFor(bannerData.image).width(700).url()})`,
         backgroundSize: 'cover',

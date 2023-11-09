@@ -17,9 +17,10 @@ async function getData() {
 export default async function Home() {
   const { props } = await getData()
   const { products, banners } = props
+  console.log(banners)
   return (
     <>
-      <HeroBanner bannerData={banners.length && banners[0]} />
+      <HeroBanner bannerData={banners.length && banners[1]} />
 
       <div className="products-heading">
         <h2>Best Selling</h2>
@@ -39,7 +40,7 @@ export default async function Home() {
         ))}
       </ul> */}
       {/* <Product /> */}
-      <FooterBanner />
+      <FooterBanner bannerData={banners.length && banners[0]} />
     </>
   )
 }

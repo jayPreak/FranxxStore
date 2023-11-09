@@ -1,3 +1,4 @@
+export const revalidate = 10
 import { Banners, Products } from '@/franxxstore/types'
 import { Product, HeroBanner, FooterBanner } from '../components'
 import { client } from '../lib/client'
@@ -8,7 +9,8 @@ async function getData() {
   const products = await client.fetch(`*[_type == "product"]`);
 
   return {
-    props: { products, banners }
+    props: { products, banners },
+    revalidate: 10,
   }
 }
 
@@ -23,9 +25,11 @@ export default async function Home() {
         <h2>Best Selling</h2>
         <p>FRANXXフランクス</p>
       </div>
-      {products.map((product: Products, id: Key | null | undefined) => (
-        <Product key={id} product={product} />
-      ))}
+      <div className='flex flex-row gap-8 px-16'>
+        {products.map((product: Products, id: Key | null | undefined) => (
+          <Product key={id} product={product} />
+        ))}
+      </div>
       {/* <ul>
         {products.map((product) => (
           <li key={product._id}>

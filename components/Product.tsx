@@ -4,18 +4,17 @@ import { Products } from '@/franxxstore/types';
 import Link from 'next/link';
 
 async function Product({ product }: { product: Products }) {
-    console.log('hii', urlFor(product.image).url())
+    console.log(product.name)
+    // console.log('hii', urlFor(product.image[0]).url())
     return (
-        <div className='flex justify-center'>
+        <div className=''>
             <Link href={`product/${product.slug.current}`}>
                 <div className="product-card ">
-                    {/* <img
+                    <img
                         src={urlFor(product.image[0]).url()}
-                        width={250}
-                        height={250}
                         alt={product.name}
-                        className='product-image'
-                    /> */}
+                        className='product-image p-4 w-full h-[350px]'
+                    />
                     <p className="product-name">{product.name}</p>
                     <p className="product-price">Rs. {product.price}</p>
                 </div>

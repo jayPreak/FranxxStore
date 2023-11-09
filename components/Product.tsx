@@ -4,9 +4,7 @@ import { Products } from '@/franxxstore/types';
 import Link from 'next/link';
 
 async function Product({ product }: { product: Products }) {
-    console.log(product.name)
-    const u = urlFor(product.image[0]).url()
-    // console.log('hii', urlFor(product.image[0]).url())
+    const u = urlFor(product.image[0]).url() || '';
     return (
         <div className=''>
             <Link href={`product/${product.slug.current}`}>

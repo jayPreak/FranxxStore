@@ -5,13 +5,14 @@ import Link from 'next/link';
 
 async function Product({ product }: { product: Products }) {
     console.log(product.name)
+    const u = urlFor(product.image[0]).url()
     // console.log('hii', urlFor(product.image[0]).url())
     return (
         <div className=''>
             <Link href={`product/${product.slug.current}`}>
                 <div className="product-card ">
                     <img
-                        src={urlFor(product.image[0]).url()}
+                        src={u}
                         alt={product.name}
                         className='product-image p-4 w-full h-[350px]'
                     />

@@ -8,10 +8,7 @@ export type Products = {
   _createdAt: string,
   _updatedAt: string,
   price: number,
-  image: {
-    alt: string,
-    image: string
-  },
+  image: any,
   details: string,
   slug: {
     current: string

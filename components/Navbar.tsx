@@ -4,13 +4,14 @@ import { AiOutlineShoppingCart } from 'react-icons/ai'
 
 const Navbar = () => {
     return (
-        <div className="navbar-containter">
+        <div className="navbar-container">
             <p className="logo">
                 <Link href='/'>FranxxStore</Link>
             </p>
 
-            <button className="cart-icon">
+            <button type='button' className="cart-icon">
                 <AiOutlineShoppingCart />
+                <span className="cart-item-qty">1</span>
 
             </button>
         </div>

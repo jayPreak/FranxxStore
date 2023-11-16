@@ -10,9 +10,15 @@ const Footer = () => {
             </p>
 
             <p className="icons">
-                <AiOutlineGithub />
-                <AiOutlineInstagram />
-                <AiOutlineTwitter />
+                <a href="https://github.com/jaypreak" target="_blank" rel="noopener noreferrer">
+                    <AiOutlineGithub />
+                </a>
+                <a href="https://www.instagram.com/jaypreak8/" target="_blank" rel="noopener noreferrer">
+                    <AiOutlineInstagram />
+                </a>
+                <a href="https://twitter.com/jaypreak" target="_blank" rel="noopener noreferrer">
+                    <AiOutlineTwitter />
+                </a>
             </p>
         </div>
     )

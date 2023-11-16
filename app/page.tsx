@@ -17,7 +17,7 @@ async function getData() {
 export default async function Home() {
   const { props } = await getData()
   const { products, banners } = props
-  console.log(banners)
+
   return (
     <>
       <HeroBanner bannerData={banners.length && banners[1]} />

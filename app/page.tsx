@@ -26,20 +26,11 @@ export default async function Home() {
         <h2>Best Selling</h2>
         <p>FRANXXフランクス</p>
       </div>
-      <div className='flex flex-row gap-8 px-16'>
+      <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-12 px-16'>
         {products.map((product: Products, id: Key | null | undefined) => (
           <Product key={id} product={product} />
         ))}
       </div>
-      {/* <ul>
-        {products.map((product) => (
-          <li key={product._id}>
-            <a href={product?.slug.current}>{product?.name}</a>
-            <p>{product.price}</p>
-          </li>
-        ))}
-      </ul> */}
-      {/* <Product /> */}
       <FooterBanner bannerData={banners.length && banners[0]} />
     </>
   )

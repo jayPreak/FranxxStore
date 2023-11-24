@@ -15,12 +15,14 @@ async function getData({ params: { slug } }: { params: { slug: string } }) {
 export default async function page({ params: { slug } }: { params: { slug: string } }) {
     const { props } = await getData({ params: { slug } })
     const { products, product } = props
+    console.log(product[0].name)
 
     // const u = urlFor(product.image).url() || '';
     return (
         <div>
             <div className="product-detail-container">
-                <div>hi
+                <div>
+                    {product[0].name}
                     <div className="image-container">
                         <img src='' />
                     </div>
